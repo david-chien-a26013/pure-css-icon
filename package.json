@@ -1,0 +1,24 @@
+{
+  "name": "svg-font-icon",
+  "version": "1.0.0",
+  "description": "Pure CSS SVG Icon 簡報 & Live Demo",
+  "type": "module",
+  "scripts": {
+    "predev": "node scripts/generate-icon-data.mjs",
+    "dev": "slidev",
+    "prebuild": "node scripts/generate-icon-data.mjs",
+    "build": "slidev build",
+    "gen:icons": "node scripts/generate-icon-data.mjs",
+    "test": "vitest run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@slidev/cli": "^52.16.0",
+    "@slidev/theme-default": "^0.25.0",
+    "@tailwindcss/vite": "^4.3.1",
+    "tailwindcss": "^4.3.1",
+    "vitest": "^4.1.9"
+  }
+}
