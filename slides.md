@@ -562,7 +562,22 @@ class: text-center
 
 # 限制與取捨
 
-<div class="grid grid-cols-2 gap-8 mt-2 text-left text-sm">
+<div class="grid grid-cols-3 gap-6 mt-2 text-left text-sm">
+
+<div>
+
+### 📐 只適合正方形 icon
+
+`width / height` 都設 `1em` 把 icon 框成**正方形**：
+
+- 非正方形的 SVG 會被**拉伸變形**
+- 或在方框內**留白、難對齊**
+
+<div class="mt-2 text-xs opacity-60">
+扁/長的 icon 要嘛改 viewBox 補成正方形，要嘛單獨給尺寸。
+</div>
+
+</div>
 
 <div>
 
@@ -570,7 +585,7 @@ class: text-center
 
 旋轉中的 `mask` 元素曾經會破圖：
 
-<div class="my-2 rounded border" style="height:150px;background:url('/firefox-mask-bug.png') center/contain no-repeat;background-color:#fff" />
+<div class="my-2 rounded border" style="height:110px;background:url('/firefox-mask-bug.png') center/contain no-repeat;background-color:#fff" />
 
 <div class="text-xs opacity-60">
 issue
@@ -584,18 +599,17 @@ issue
 
 ### 📦 data URI 讓 CSS 變大？
 
-實測 37 顆 icon × 2 變體：
+37 顆 × 2 變體實測：
 
 | | 大小 |
 | --- | --- |
 | 原始 SVG | 33 KB |
-| 產出 CSS（raw） | 121 KB |
+| CSS（raw） | 121 KB |
 | **CSS（gzip）** | **≈ 10 KB** |
 
 <div class="mt-2 text-xs opacity-70">
-raw 看似膨脹，但 data URI 重複性高、<b>gzip 後只剩 ~10 KB</b>，
-又省掉 37 個 HTTP request。<br/>
-→ 幾十顆 icon <b>不算嚴重</b>；上千顆或大張插圖才考慮拆外部檔。
+raw 膨脹，但重複性高、<b>gzip 後 ~10 KB</b>，又省 37 個 request。<br/>
+→ 幾十顆<b>不嚴重</b>；上千顆才考慮拆外部檔。
 </div>
 
 </div>
@@ -671,6 +685,12 @@ layout: center
     <div class="font-semibold">Icon Fonts 完整教學</div>
     <a href="https://www.cythilya.tw/2013/10/08/icon-fonts-tutorial/" class="text-blue-500 text-xs break-all">cythilya.tw/2013/10/08/icon-fonts-tutorial/</a>
     <div class="text-xs opacity-60 mt-1">Icon Font 做法的背景知識</div>
+  </div>
+
+  <div class="p-3 border rounded-lg">
+    <div class="font-semibold">SVG Sprites 完整教學</div>
+    <a href="https://www.cythilya.tw/2018/08/20/svg-sprites/" class="text-blue-500 text-xs break-all">cythilya.tw/2018/08/20/svg-sprites/</a>
+    <div class="text-xs opacity-60 mt-1">SVG Sprite 做法的背景知識</div>
   </div>
 
   <div class="p-3 border rounded-lg">
