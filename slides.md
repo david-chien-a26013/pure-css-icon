@@ -568,13 +568,26 @@ class: text-center
 
 ### 📐 只適合正方形 icon
 
-`width / height` 都設 `1em` 把 icon 框成**正方形**：
+`width / height` 都設 `1em` 把 icon 框成**正方形**。
+SVG 會保持比例置中（不變形），但非正方形的 icon 會**留白、難對齊**：
 
-- 非正方形的 SVG 會被**拉伸變形**
-- 或在方框內**留白、難對齊**
+<div class="mt-3 flex gap-3 justify-center">
+  <div class="flex flex-col items-center gap-1">
+    <div style="width:56px;height:56px;border:1px dashed #f43f5e;background:url('/demo-tall.svg') 100% 100%" />
+    <span class="text-xs opacity-50">直的</span>
+  </div>
+  <div class="flex flex-col items-center gap-1">
+    <div style="width:56px;height:56px;border:1px dashed #f43f5e;background:url('/demo-wide.svg') 100% 100%" />
+    <span class="text-xs opacity-50">橫的</span>
+  </div>
+  <div class="flex flex-col items-center gap-1">
+    <div style="width:56px;height:56px;border:1px dashed #cbd5e1;background:url('/demo-square.svg') 100% 100%" />
+    <span class="text-xs opacity-50">正方</span>
+  </div>
+</div>
 
 <div class="mt-2 text-xs opacity-60">
-扁/長的 icon 要嘛改 viewBox 補成正方形，要嘛單獨給尺寸。
+虛線框＝1em 方框。扁/長 icon 要嘛改 viewBox 補成正方形，要嘛單獨給尺寸。
 </div>
 
 </div>
@@ -590,7 +603,7 @@ class: text-center
 <div class="text-xs opacity-60">
 issue
 <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1671784" class="text-blue-500">#1671784</a>
-— 已於近期版本修復 ✅
+— 回報於 5 年前，已於 2 年前修復 ✅
 </div>
 
 </div>
