@@ -294,6 +294,41 @@ layout: two-cols
 
 ---
 layout: center
+class: text-center
+---
+
+# Mask-Image 效果展示
+
+<div class="flex items-center justify-center gap-10 mt-10">
+
+  <div class="flex flex-col items-center gap-3">
+    <i class="i-button-pile-edit" style="font-size: 100px" />
+    <span class="text-sm opacity-50">SVG icon</span>
+  </div>
+
+  <span class="text-5xl opacity-30 font-light">+</span>
+
+  <div class="flex flex-col items-center gap-3">
+    <div class="rounded-lg" style="width:100px;height:100px;background:linear-gradient(135deg,#4285f4 0%,#ea4335 33%,#fbbc05 66%,#34a853 100%)" />
+    <span class="text-sm opacity-50">任意 background</span>
+  </div>
+
+  <span class="text-5xl opacity-30 font-light">=</span>
+
+  <div class="flex flex-col items-center gap-3">
+    <i class="i-button-pile-edit-mask"
+       style="font-size:100px; background:linear-gradient(135deg,#4285f4 0%,#ea4335 33%,#fbbc05 66%,#34a853 100%)" />
+    <span class="text-sm opacity-50">背景透過形狀顯示</span>
+  </div>
+
+</div>
+
+<div class="mt-8 text-sm opacity-60">
+  <code>background</code> 可以是 color、gradient，甚至 <code>url(照片)</code>
+</div>
+
+---
+layout: center
 ---
 
 # 兩種變體，各司其職
