@@ -6,7 +6,6 @@ info: |
 highlighter: shiki
 lineNumbers: true
 transition: slide-left
-routerMode: hash
 ---
 
 <IconGallery />

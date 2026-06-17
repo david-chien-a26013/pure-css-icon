@@ -35,6 +35,11 @@ jobs:
       - name: Build slides
         run: pnpm build --base /pure-css-icon/ --out dist
 
+      # GitHub Pages 無 SPA rewrite，複製 index.html 為 404.html
+      # 讓 history 模式下深連結 / 重整子頁時能 fallback 回 SPA
+      - name: Add SPA fallback
+        run: cp dist/index.html dist/404.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
