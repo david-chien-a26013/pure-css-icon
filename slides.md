@@ -483,7 +483,7 @@ export default plugin(function ({ addComponents }) {
 
 # 兩個工具函式
 
-```js {all|1-8|10-17}
+```js
 // 檔名 → CSS class 名
 function filenameToClassName (filename) {
   return filename
@@ -503,12 +503,8 @@ function svgToDataUri (svg) {
 }
 ```
 
-<v-click>
-
 新增一顆 icon 的成本：**把 `.svg` 丟進資料夾就好。**
 沒有重產字型、沒有重組 sprite、沒有額外 request。
-
-</v-click>
 
 ---
 
@@ -530,14 +526,9 @@ import tailwindcss from '@tailwindcss/vite'
 export default { plugins: [tailwindcss()] }
 ```
 
-<div v-click class="mt-4 text-sm opacity-70">
+<div class="mt-4 text-sm opacity-70">
 💡 icon 用動態 class（<code>i-${name}</code>）時，記得用 <code>@source</code> 或 safelist
 讓 Tailwind 別把它們 tree-shake 掉。
-</div>
-
-<div v-click class="mt-3 text-xs opacity-50">
-（本場 demo 跑在 Slidev＝UnoCSS 上，所以用同一份 plugin 核心預先編譯成 CSS 再載入；
-在純 Tailwind 專案則照上面這樣掛即可。）
 </div>
 
 ---
@@ -555,15 +546,15 @@ SVG 會保持比例置中（不變形），但非正方形的 icon 會**留白�
 
 <div class="mt-3 flex gap-3 justify-center">
   <div class="flex flex-col items-center gap-1">
-    <div style="width:56px;height:56px;border:1px dashed #f43f5e;background:url('/demo-tall.svg') 100% 100%;background-repeat:no-repeat;background-position:center;" />
+    <div style="width:56px;height:56px;border:1px dashed #f43f5e;background:url('./demo-tall.svg') 100% 100%;background-repeat:no-repeat;background-position:center;" />
     <span class="text-xs opacity-50">直的</span>
   </div>
   <div class="flex flex-col items-center gap-1">
-    <div style="width:56px;height:56px;border:1px dashed #f43f5e;background:url('/demo-wide.svg') 100% 100%;background-repeat:no-repeat;background-position:center;" />
+    <div style="width:56px;height:56px;border:1px dashed #f43f5e;background:url('./demo-wide.svg') 100% 100%;background-repeat:no-repeat;background-position:center;" />
     <span class="text-xs opacity-50">橫的</span>
   </div>
   <div class="flex flex-col items-center gap-1">
-    <div style="width:56px;height:56px;border:1px dashed #cbd5e1;background:url('/demo-square.svg') 100% 100%;background-repeat:no-repeat;background-position:center;" />
+    <div style="width:56px;height:56px;border:1px dashed #cbd5e1;background:url('./demo-square.svg') 100% 100%;background-repeat:no-repeat;background-position:center;" />
     <span class="text-xs opacity-50">正方</span>
   </div>
 </div>
@@ -580,7 +571,7 @@ SVG 會保持比例置中（不變形），但非正方形的 icon 會**留白�
 
 旋轉中的 `mask` 元素曾經會破圖：
 
-<div class="my-2 rounded border" style="height:110px;background:url('/firefox-mask-bug.png') center/contain no-repeat;background-color:#fff" />
+<div class="my-2 rounded border" style="height:110px;background:url('./firefox-mask-bug.png') center/contain no-repeat;background-color:#fff" />
 
 <div class="text-xs opacity-60">
 issue
