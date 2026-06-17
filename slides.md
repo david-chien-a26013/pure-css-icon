@@ -410,11 +410,9 @@ class: text-center
 
 # Plugin 核心：掃資料夾 → 產 class
 
-```js {all|7|8-10|12-14|16-23|25-26}
+```js {all|5|8-13|15-18|19-22|24}
 // tailwind-plugin-bac-icons.js
 import plugin from 'tailwindcss/plugin'
-import fs from 'node:fs'
-import path from 'node:path'
 import { filenameToClassName, svgToDataUri } from './icon-utils.js'
 
 const assetsDir = path.resolve(__dirname, 'assets/icons')
@@ -442,14 +440,24 @@ export default plugin(function ({ addComponents }) {
 
 ---
 
-# SVG → data URI 的小撇步
+# 兩個工具函式
 
-```js {all|2-3|4|5}
+```js {all|1-6|8-15}
+// 檔名 → CSS class 名
+function filenameToClassName (filename) {
+  return filename
+    .replace('.svg', '')        // 去副檔名
+    .replace(/_/g, '-')         // 底線 → 連字號
+    .replace(/([a-z])([A-Z])/g, '$1-$2')  // camelCase → kebab-case
+    .toLowerCase()
+}
+
+// SVG 字串 → data URI（讓 CSS background/mask 直接 inline 使用）
 function svgToDataUri (svg) {
   const cleaned = svg
     .replace(/\s+/g, ' ').trim()   // 壓掉換行與多餘空白
     .replace(/"/g, "'")            // 雙引號 → 單引號（不破壞外層 url("…")）
-    .replace(/#/g, '%23')          // # 要編碼，否則被當成 fragment
+    .replace(/#/g, '%23')          // # 要編碼，否則被當成 URL fragment
   return `url("data:image/svg+xml,${cleaned}")`
 }
 ```
