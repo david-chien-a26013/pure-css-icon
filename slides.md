@@ -403,6 +403,11 @@ export default { plugins: [tailwindcss()] }
 讓 Tailwind 別把它們 tree-shake 掉。
 </div>
 
+<div v-click class="mt-3 text-xs opacity-50">
+（本場 demo 跑在 Slidev＝UnoCSS 上，所以用同一份 plugin 核心預先編譯成 CSS 再載入；
+在純 Tailwind 專案則照上面這樣掛即可。）
+</div>
+
 ---
 layout: center
 class: text-center

@@ -19,7 +19,7 @@ async function copyClass (name: string) {
 </script>
 
 <template>
-  <div class="not-prose">
+  <div>
     <!-- 控制列 -->
     <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
       <label class="flex items-center gap-2">

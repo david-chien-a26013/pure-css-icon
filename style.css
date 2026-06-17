@@ -1,5 +1,4 @@
-@import "tailwindcss";
-@plugin "./tailwind-plugin-bac-icons.js";
-
-/* 掃描 icon-names.ts 內的 safelist 註解，確保 37×2 個 class 都產生 */
-@source "./components/icon-names.ts";
+/* Slidev 自動載入此檔。只 import 預先編譯好的 icon CSS（純 CSS、無 Tailwind 指令），
+   避免與 Slidev 內建的 UnoCSS 在同一個 build 內衝突。
+   slides 內的 utility class（flex/text-6xl/text-rose-500…）由 Slidev 的 UnoCSS 處理。 */
+@import "./style-icons.css";
