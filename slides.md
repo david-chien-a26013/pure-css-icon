@@ -27,12 +27,19 @@ class: text-center
   <i class="i-button-trashcan-mask text-rose-500" />
 </div>
 
-<div class="pt-12 text-sm opacity-60">
+<div class="pt-10 mx-auto max-w-xl text-sm opacity-70 bg-amber-50 border border-amber-200 rounded-lg px-5 py-3">
+  ⚠️ 核心做法<b>並非我原創</b>，整理自 <b>Anthony Fu</b> 的
+  <a href="https://antfu.me/posts/icons-in-pure-css-zh" class="text-blue-500">《Icons in Pure CSS》</a>，
+  本場只是把它走過一遍、做成 Tailwind plugin 與 demo。
+</div>
+
+<div class="pt-8 text-sm opacity-60">
   David Chien ·　2026
 </div>
 
 <!--
-講者開場：先讓大家看看今天要做出來的東西，再來解釋它是怎麼運作的。
+講者開場：先強調這個技術不是我發明的，是 Anthony Fu 的文章；
+我做的是把它整理成一套可用的 Tailwind plugin 流程。再讓大家看 demo。
 -->
 
 ---
@@ -127,7 +134,42 @@ template 被 icon 路徑淹沒；
 layout: two-cols
 ---
 
-# ③ Icon Font（IcoMoon）
+# ③ SVG → Vue Component
+
+用 build plugin 把 `.svg` 包成元件：
+
+```js
+// vite-plugin-vue2-svg
+import IconAdd from './add.svg?component'
+```
+
+```html
+<IconAdd class="text-red-500" />
+```
+
+優點：
+
+- import 進來像一般元件用
+- 可改色、可控、template 乾淨
+
+::right::
+
+<div class="pl-6 pt-16">
+
+### 😩 痛點
+
+- **綁特定 build 工具 / 框架版本**
+  （`vite-plugin-vue2-svg` 限 Vue 2 + Vite 2）
+- 每顆 icon 都是一個 component instance
+- 換框架 / 升級就要重找方案
+
+</div>
+
+---
+layout: two-cols
+---
+
+# ④ Icon Font（IcoMoon）
 
 把 icon 打包成字型，當文字用：
 
@@ -160,7 +202,7 @@ layout: two-cols
 layout: two-cols
 ---
 
-# ④ SVG Sprite
+# ⑤ SVG Sprite
 
 把所有 SVG 合成一份，用 `<use>` 引用：
 
@@ -207,7 +249,7 @@ class: text-center
 layout: two-cols
 ---
 
-# ⑤ CSS `background-image`
+# ⑥ CSS `background-image`
 
 把 SVG 變成 data URI 當背景圖：
 
@@ -245,7 +287,7 @@ layout: two-cols
 layout: two-cols
 ---
 
-# ⑥ CSS `mask-image` + `currentColor`
+# ⑦ CSS `mask-image` + `currentColor`
 
 <div class="text-sm opacity-60 -mt-2 mb-2">靈感來自 Anthony Fu 的 Pure CSS Icons</div>
 
@@ -579,32 +621,38 @@ layout: center
 
 # 參考資料
 
-<div class="mt-6 space-y-4 text-left max-w-2xl mx-auto">
-
-<div class="p-4 border rounded-lg">
-  <div class="text-sm opacity-50 mb-1">Anthony Fu</div>
+<div class="mt-4 p-4 border-2 border-blue-300 rounded-lg text-left max-w-3xl mx-auto bg-blue-50">
+  <div class="text-xs opacity-50 mb-1">⭐ 核心來源 · Anthony Fu</div>
   <div class="font-semibold">Icons in Pure CSS</div>
   <a href="https://antfu.me/posts/icons-in-pure-css-zh" class="text-blue-500 text-sm break-all">
     antfu.me/posts/icons-in-pure-css-zh
   </a>
-  <div class="text-xs opacity-60 mt-1">本技術的靈感來源，詳述 CSS mask-image icon 原理</div>
+  <div class="text-xs opacity-60 mt-1">本技術的原始出處，詳述 CSS mask-image icon 原理</div>
 </div>
 
-<div class="p-4 border rounded-lg">
-  <div class="text-sm opacity-50 mb-1">David Chien</div>
-  <div class="font-semibold">在 Vite 專案使用純 CSS icon</div>
-  <a href="https://clipwww.github.io/blog/2023/01/12/icon/" class="text-blue-500 text-sm break-all">
-    clipwww.github.io/blog/2023/01/12/icon/
-  </a>
-  <div class="text-xs opacity-60 mt-1">WindiCSS plugin 實作紀錄，本次簡報的前身</div>
-</div>
+<div class="mt-4 grid grid-cols-2 gap-3 text-left text-sm max-w-3xl mx-auto">
 
-<div class="p-4 border rounded-lg">
-  <div class="text-sm opacity-50 mb-1">本場 Demo</div>
-  <div class="font-semibold">tailwind-plugin-bac-icons.js</div>
-  <div class="text-xs opacity-60 mt-1">
-    <code>assets/icons/</code> 下的所有 SVG 自動產生 <code>.i-{name}</code> / <code>.i-{name}-mask</code>
+  <div class="p-3 border rounded-lg">
+    <div class="font-semibold">在 Vite 專案使用純 CSS icon</div>
+    <a href="https://clipwww.github.io/blog/2023/01/12/icon/" class="text-blue-500 text-xs break-all">clipwww.github.io/blog/2023/01/12/icon/</a>
+    <div class="text-xs opacity-60 mt-1">作者部落格 · WindiCSS plugin 前身</div>
   </div>
-</div>
+
+  <div class="p-3 border rounded-lg">
+    <div class="font-semibold">Icon Fonts 完整教學</div>
+    <a href="https://www.cythilya.tw/2013/10/08/icon-fonts-tutorial/" class="text-blue-500 text-xs break-all">cythilya.tw/2013/10/08/icon-fonts-tutorial/</a>
+    <div class="text-xs opacity-60 mt-1">Icon Font 做法的背景知識</div>
+  </div>
+
+  <div class="p-3 border rounded-lg">
+    <div class="font-semibold">SVG icon 技術整理（知乎）</div>
+    <a href="https://zhuanlan.zhihu.com/p/20683131" class="text-blue-500 text-xs break-all">zhuanlan.zhihu.com/p/20683131</a>
+    <div class="text-xs opacity-60 mt-1">各種 SVG icon 方案比較</div>
+  </div>
+
+  <div class="p-3 border rounded-lg">
+    <div class="font-semibold">本場 Demo · tailwind-plugin-bac-icons.js</div>
+    <div class="text-xs opacity-60 mt-1"><code>assets/icons/</code> 自動產生 <code>.i-{name}</code> / <code>-mask</code></div>
+  </div>
 
 </div>
