@@ -6,6 +6,13 @@ info: |
 highlighter: shiki
 lineNumbers: true
 transition: slide-left
+---
+
+# Demo
+
+<IconGallery />
+
+---
 class: text-center
 ---
 
@@ -25,8 +32,7 @@ class: text-center
 </div>
 
 <!--
-講者開場：今天用 15 分鐘，把「網頁要怎麼放 icon」這件看似簡單的事，
-從各種做法的痛點一路講到我們現在用的解法。
+講者開場：先讓大家看看今天要做出來的東西，再來解釋它是怎麼運作的。
 -->
 
 ---
@@ -435,9 +441,8 @@ layout: two-cols
 
 ### ⚠️ 已知限制
 
-- **Firefox** 對「旋轉的 `mask` 元素」有
-  [長年 render bug](https://bugzilla.mozilla.org/) ——
-  需要旋轉動畫時要留意
+- **Firefox** 對「旋轉的 `mask` 元素」的 render bug
+  已在近期版本修復（曾是長年未解的 issue）
 - data URI 會讓 CSS 檔變大
   （icon 多時可考慮 base64 / 外部檔）
 

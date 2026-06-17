@@ -3,3 +3,4 @@
 {"t":0,"agent":"system","event":"skill_invoked","skill_name":"superpowers:writing-plans"}
 {"t":0,"agent":"ac29bc4","agent_type":"unknown","event":"agent_stop","success":true,"duration_ms":0}
 {"t":0,"agent":"system","event":"skill_invoked","skill_name":"superpowers:executing-plans"}
+{"t":0,"agent":"system","event":"skill_invoked","skill_name":"superpowers:finishing-a-development-branch"}
