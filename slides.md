@@ -9,3 +9,9 @@ title: Pure CSS SVG Icon
   <i class="i-icon-add" />
   <i class="i-icon-edit-mask text-red-500" />
 </div>
+
+---
+
+# Demo
+
+<IconGallery />
