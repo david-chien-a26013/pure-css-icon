@@ -9,8 +9,6 @@ transition: slide-left
 routerMode: hash
 ---
 
-# Demo
-
 <IconGallery />
 
 ---
@@ -543,23 +541,6 @@ export default { plugins: [tailwindcss()] }
 </div>
 
 ---
-layout: center
-class: text-center
----
-
-# Live Demo 🎬
-
-<div class="text-lg opacity-70 mt-4">
-37 顆 icon、兩種變體、即時調大小與顏色
-</div>
-
----
-
-# Demo
-
-<IconGallery />
-
----
 
 # 限制與取捨
 
@@ -647,6 +628,12 @@ layout: center
 </div>
 
 ---
+
+
+<IconGallery />
+
+
+---
 layout: center
 class: text-center
 ---
@@ -705,11 +692,6 @@ layout: center
     <div class="font-semibold">SVG icon 技術整理（知乎）</div>
     <a href="https://zhuanlan.zhihu.com/p/20683131" class="text-blue-500 text-xs break-all">zhuanlan.zhihu.com/p/20683131</a>
     <div class="text-xs opacity-60 mt-1">各種 SVG icon 方案比較</div>
-  </div>
-
-  <div class="p-3 border rounded-lg">
-    <div class="font-semibold">本場 Demo · tailwind-plugin-bac-icons.js</div>
-    <div class="text-xs opacity-60 mt-1"><code>assets/icons/</code> 自動產生 <code>.i-{name}</code> / <code>-mask</code></div>
   </div>
 
 </div>
