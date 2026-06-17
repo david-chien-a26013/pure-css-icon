@@ -1,0 +1,5 @@
+@import "tailwindcss";
+@plugin "./tailwind-plugin-bac-icons.js";
+
+/* 掃描 icon-names.ts 內的 safelist 註解，確保 37×2 個 class 都產生 */
+@source "./components/icon-names.ts";
