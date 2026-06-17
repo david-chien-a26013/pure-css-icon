@@ -299,32 +299,66 @@ class: text-center
 
 # Mask-Image 效果展示
 
-<div class="flex items-center justify-center gap-10 mt-10">
+<div class="grid grid-cols-2 gap-6 mt-4">
 
-  <div class="flex flex-col items-center gap-3">
-    <i class="i-button-pile-edit" style="font-size: 100px" />
-    <span class="text-sm opacity-50">SVG icon</span>
+  <!-- gradient 示範 -->
+  <div class="flex items-center justify-center gap-5">
+    <div class="flex flex-col items-center gap-1">
+      <i class="i-button-pile-edit" style="font-size:72px" />
+      <span class="text-xs opacity-40">SVG mask</span>
+    </div>
+    <span class="text-3xl opacity-25">+</span>
+    <div class="flex flex-col items-center gap-1">
+      <div class="rounded" style="width:72px;height:72px;background:linear-gradient(135deg,#4285f4,#ea4335,#fbbc05,#34a853)" />
+      <span class="text-xs opacity-40">gradient</span>
+    </div>
+    <span class="text-3xl opacity-25">=</span>
+    <div class="flex flex-col items-center gap-1">
+      <i class="i-button-pile-edit-mask" style="font-size:72px;background:linear-gradient(135deg,#4285f4,#ea4335,#fbbc05,#34a853)" />
+      <span class="text-xs opacity-40">結果</span>
+    </div>
   </div>
 
-  <span class="text-5xl opacity-30 font-light">+</span>
-
-  <div class="flex flex-col items-center gap-3">
-    <div class="rounded-lg" style="width:100px;height:100px;background:linear-gradient(135deg,#4285f4 0%,#ea4335 33%,#fbbc05 66%,#34a853 100%)" />
-    <span class="text-sm opacity-50">任意 background</span>
-  </div>
-
-  <span class="text-5xl opacity-30 font-light">=</span>
-
-  <div class="flex flex-col items-center gap-3">
-    <i class="i-button-pile-edit-mask"
-       style="font-size:100px; background:linear-gradient(135deg,#4285f4 0%,#ea4335 33%,#fbbc05 66%,#34a853 100%)" />
-    <span class="text-sm opacity-50">背景透過形狀顯示</span>
+  <!-- photo 示範 -->
+  <div class="flex items-center justify-center gap-5">
+    <div class="flex flex-col items-center gap-1">
+      <i class="i-button-pile-edit" style="font-size:72px" />
+      <span class="text-xs opacity-40">SVG mask</span>
+    </div>
+    <span class="text-3xl opacity-25">+</span>
+    <div class="flex flex-col items-center gap-1">
+      <div class="rounded" style="width:72px;height:72px;background:url('/demo-photo.jpg') center/cover" />
+      <span class="text-xs opacity-40">photo</span>
+    </div>
+    <span class="text-3xl opacity-25">=</span>
+    <div class="flex flex-col items-center gap-1">
+      <i class="i-button-pile-edit-mask" style="font-size:72px;background:url('/demo-photo.jpg') center/cover" />
+      <span class="text-xs opacity-40">結果</span>
+    </div>
   </div>
 
 </div>
 
-<div class="mt-8 text-sm opacity-60">
-  <code>background</code> 可以是 color、gradient，甚至 <code>url(照片)</code>
+<!-- 原理說明 -->
+<div class="mt-5 bg-gray-50 rounded-lg px-6 py-3 text-left text-sm grid grid-cols-2 gap-4 items-start">
+  <div>
+    <div class="font-bold mb-1 opacity-70">🔍 原理</div>
+    <code>mask-image</code> 把 SVG 當「<b>鏤空模板</b>」——<br/>
+    SVG 不透明的地方 → <code>background</code> 透出來<br/>
+    SVG 透明的地方 → 完全遮住<br/>
+    <div class="mt-2 opacity-60">所以 <code>background</code> 可以是任何東西：<br/>color、gradient、甚至 <code>url(photo.jpg)</code></div>
+  </div>
+  <div>
+
+```css
+.icon {
+  background: url(photo.jpg); /* 想顯示什麼 */
+  mask-image: url(icon.svg);  /* 鏤空形狀 */
+  mask-size: 100% 100%;
+}
+```
+
+  </div>
 </div>
 
 ---
@@ -376,7 +410,8 @@ class: text-center
 
 # Plugin 核心：掃資料夾 → 產 class
 
-```js {all|1-5|7-9|11-13|15-22|24-25}
+```js {all|7|8-10|12-14|16-23|25-26}
+// tailwind-plugin-bac-icons.js
 import plugin from 'tailwindcss/plugin'
 import fs from 'node:fs'
 import path from 'node:path'
