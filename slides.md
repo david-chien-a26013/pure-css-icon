@@ -283,6 +283,13 @@ layout: two-cols
   <i class="i-icon-edit-mask text-emerald-500" />
 </div>
 
+<div class="mt-5 text-xs opacity-60">底色不限 currentColor，gradient 也行 ↓</div>
+<div class="mt-1 flex items-center gap-3">
+  <i class="i-icon-add-mask text-8xl" style="background: linear-gradient(135deg, #4285f4 0%, #ea4335 35%, #fbbc05 65%, #34a853 100%)" />
+  <i class="i-button-settings-mask text-8xl" style="background: linear-gradient(135deg, #4285f4 0%, #ea4335 35%, #fbbc05 65%, #34a853 100%)" />
+  <i class="i-icon-save-mask text-8xl" style="background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f97316 100%)" />
+</div>
+
 </div>
 
 ---
