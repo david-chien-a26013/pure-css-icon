@@ -40,7 +40,7 @@ async function copyClass (name: string) {
     </div>
 
     <!-- gallery -->
-    <div class="grid grid-cols-4 gap-3 max-h-[60vh] overflow-auto pr-2">
+    <div class="grid grid-cols-4 gap-3 max-h-[60vh] overflow-auto pr-2 pb-40">
       <div
         v-for="name in filtered"
         :key="name"

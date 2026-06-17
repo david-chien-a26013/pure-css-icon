@@ -27,10 +27,10 @@ class: text-center
   <i class="i-button-trashcan-mask text-rose-500" />
 </div>
 
-<div class="pt-10 mx-auto max-w-xl text-sm opacity-70 bg-amber-50 border border-amber-200 rounded-lg px-5 py-3">
+<div class="mt-10 mx-auto max-w-xl text-sm opacity-70 bg-amber-50 border border-amber-200 rounded-lg px-5 py-3 text-black">
   ⚠️ 核心做法<b>並非我原創</b>，整理自 <b>Anthony Fu</b> 的
-  <a href="https://antfu.me/posts/icons-in-pure-css-zh" class="text-blue-500">《Icons in Pure CSS》</a>，
-  本場只是把它走過一遍、做成 Tailwind plugin 與 demo。
+  <a href="https://antfu.me/posts/icons-in-pure-css-zh" class="text-blue-500">《Icons in Pure CSS (聊聊纯 CSS 图标)》</a>，
+  我只是把它走過一遍、做成 Tailwind plugin 與 demo。
 </div>
 
 <div class="pt-8 text-sm opacity-60">
@@ -284,57 +284,6 @@ layout: two-cols
 </div>
 
 ---
-layout: two-cols
----
-
-# ⑦ CSS `mask-image` + `currentColor`
-
-<div class="text-sm opacity-60 -mt-2 mb-2">靈感來自 Anthony Fu 的 Pure CSS Icons</div>
-
-把 SVG 當**遮罩**，用底色當顏色：
-
-```css
-.i-icon-add-mask {
-  display: inline-block;
-  width: 1em; height: 1em;
-  background: currentColor;   /* ← 顏色來源 */
-  mask-image: url("data:image/svg+xml,…");
-  mask-size: 100% 100%;
-}
-```
-
-```html
-<i class="i-icon-add-mask" 
-   style="font-size:48px; color:red" />
-```
-
-::right::
-
-<div class="pl-6 pt-12">
-
-### 🎉 全部達成
-
-- `font-size` 控大小
-- **`color` 染色**（像 font icon 一樣）
-- 沒有 font 的副作用
-- 無額外 request
-
-<div class="mt-4 flex items-center gap-4 text-6xl">
-  <i class="i-icon-edit-mask text-sky-500" />
-  <i class="i-icon-edit-mask text-rose-500" />
-  <i class="i-icon-edit-mask text-emerald-500" />
-</div>
-
-<div class="mt-5 text-xs opacity-60">底色不限 currentColor，gradient 也行 ↓</div>
-<div class="mt-1 flex items-center gap-3">
-  <i class="i-icon-add-mask text-8xl" style="background: linear-gradient(135deg, #4285f4 0%, #ea4335 35%, #fbbc05 65%, #34a853 100%)" />
-  <i class="i-button-settings-mask text-8xl" style="background: linear-gradient(135deg, #4285f4 0%, #ea4335 35%, #fbbc05 65%, #34a853 100%)" />
-  <i class="i-icon-save-mask text-8xl" style="background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f97316 100%)" />
-</div>
-
-</div>
-
----
 layout: center
 class: text-center
 ---
@@ -383,12 +332,12 @@ class: text-center
 
 <!-- 原理說明 -->
 <div class="mt-5 bg-gray-50 rounded-lg px-6 py-3 text-left text-sm grid grid-cols-2 gap-4 items-start">
-  <div>
+  <div class="text-black">
     <div class="font-bold mb-1 opacity-70">🔍 原理</div>
-    <code>mask-image</code> 把 SVG 當「<b>鏤空模板</b>」——<br/>
-    SVG 不透明的地方 → <code>background</code> 透出來<br/>
+    <code class="text-white">mask-image</code> 把 SVG 當「<b>鏤空模板</b>」——<br/>
+    SVG 不透明的地方 → <code class="text-white">background</code> 透出來<br/>
     SVG 透明的地方 → 完全遮住<br/>
-    <div class="mt-2 opacity-60">所以 <code>background</code> 可以是任何東西：<br/>color、gradient、甚至 <code>url(photo.jpg)</code></div>
+    <div class="mt-2 opacity-60">所以 <code class="text-white">background</code> 可以是任何東西：<br/>color、gradient、甚至 <code class="text-white">url(photo.jpg)</code></div>
   </div>
   <div>
 
@@ -401,6 +350,57 @@ class: text-center
 ```
 
   </div>
+</div>
+
+---
+layout: two-cols
+---
+
+# ⑦ CSS `mask-image` + `currentColor`
+
+<div class="text-sm opacity-60 -mt-2 mb-2">靈感來自 Anthony Fu 的 Pure CSS Icons</div>
+
+把 SVG 當**遮罩**，用底色當顏色：
+
+```css
+.i-icon-add-mask {
+  display: inline-block;
+  width: 1em; height: 1em;
+  background: currentColor;   /* ← 顏色來源 */
+  mask-image: url("data:image/svg+xml,…");
+  mask-size: 100% 100%;
+}
+```
+
+```html
+<i class="i-icon-add-mask" 
+   style="font-size:48px; color:red" />
+```
+
+::right::
+
+<div class="pl-6 pt-12">
+
+### 🎉 全部達成
+
+- `font-size` 控大小
+- **`color` 染色**（像 font icon 一樣）
+- 沒有 font 的副作用
+- 無額外 request
+
+<div class="mt-4 flex items-center gap-4 text-6xl">
+  <i class="i-icon-edit-mask text-sky-500" />
+  <i class="i-icon-edit-mask text-rose-500" />
+  <i class="i-icon-edit-mask text-emerald-500" />
+</div>
+
+<div class="mt-5 text-xs opacity-60">底色不限 currentColor，gradient 也行 ↓</div>
+<div class="mt-1 flex items-center gap-3">
+  <i class="i-icon-add-mask text-8xl" style="background: linear-gradient(135deg, #4285f4 0%, #ea4335 35%, #fbbc05 65%, #34a853 100%)" />
+  <i class="i-button-settings-mask text-8xl" style="background: linear-gradient(135deg, #4285f4 0%, #ea4335 35%, #fbbc05 65%, #34a853 100%)" />
+  <i class="i-icon-save-mask text-8xl" style="background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f97316 100%)" />
+</div>
+
 </div>
 
 ---
@@ -559,33 +559,62 @@ class: text-center
 <IconGallery />
 
 ---
-layout: two-cols
----
 
 # 限制與取捨
 
-<div class="pr-4">
+<div class="grid grid-cols-2 gap-8 mt-2 text-left text-sm">
 
-### ⚠️ 已知限制
+<div>
 
-- **Firefox** 對「旋轉的 `mask` 元素」的 render bug
-  已在近期版本修復（曾是長年未解的 issue）
-- data URI 會讓 CSS 檔變大
-  （icon 多時可考慮 base64 / 外部檔）
+### ⚠️ Firefox 旋轉 mask 的 bug
+
+旋轉中的 `mask` 元素曾經會破圖：
+
+<div class="my-2 rounded border" style="height:150px;background:url('/firefox-mask-bug.png') center/contain no-repeat;background-color:#fff" />
+
+<div class="text-xs opacity-60">
+issue
+<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1671784" class="text-blue-500">#1671784</a>
+— 已於近期版本修復 ✅
+</div>
 
 </div>
 
-::right::
+<div>
 
-<div class="pl-4">
+### 📦 data URI 讓 CSS 變大？
 
-### 🧭 怎麼選變體
+實測 37 顆 icon × 2 變體：
+
+| | 大小 |
+| --- | --- |
+| 原始 SVG | 33 KB |
+| 產出 CSS（raw） | 121 KB |
+| **CSS（gzip）** | **≈ 10 KB** |
+
+<div class="mt-2 text-xs opacity-70">
+raw 看似膨脹，但 data URI 重複性高、<b>gzip 後只剩 ~10 KB</b>，
+又省掉 37 個 HTTP request。<br/>
+→ 幾十顆 icon <b>不算嚴重</b>；上千顆或大張插圖才考慮拆外部檔。
+</div>
+
+</div>
+
+</div>
+
+---
+layout: center
+---
+
+# 🧭 怎麼選變體
+
+<div class="max-w-xl mx-auto mt-6">
 
 | 情境 | 用哪個 |
 | --- | --- |
-| 多色 / logo | `.i-{name}` |
-| 單色、要染色 | `.i-{name}-mask` |
-| hover 變色 | `-mask` + `:hover` |
+| 多色 / logo / 彩色插圖 | `.i-{name}`（background-image） |
+| 單色、需要染色 | `.i-{name}-mask`（mask） |
+| hover / 狀態變色 | `-mask` + `:hover` 改 `color` |
 
 </div>
 
@@ -621,9 +650,9 @@ layout: center
 
 # 參考資料
 
-<div class="mt-4 p-4 border-2 border-blue-300 rounded-lg text-left max-w-3xl mx-auto bg-blue-50">
+<div class="mt-4 p-4 border-2 border-blue-300 rounded-lg text-left max-w-3xl mx-auto bg-blue-50 text-black">
   <div class="text-xs opacity-50 mb-1">⭐ 核心來源 · Anthony Fu</div>
-  <div class="font-semibold">Icons in Pure CSS</div>
+  <div class="font-semibold">Icons in Pure CSS (聊聊纯 CSS 图标)</div>
   <a href="https://antfu.me/posts/icons-in-pure-css-zh" class="text-blue-500 text-sm break-all">
     antfu.me/posts/icons-in-pure-css-zh
   </a>
