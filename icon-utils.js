@@ -37,7 +37,8 @@ export function buildIconComponents (assetsDir) {
       'background-image': url,
       'background-repeat': 'no-repeat',
       'background-size': '100% 100%',
-      'vertical-align': 'middle'
+      'background-position': 'center',
+      'background-repeat': 'no-repeat',
     }
 
     // mask 變體：用 CSS color 染色

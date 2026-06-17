@@ -38,7 +38,7 @@
 
 - [ ] **Step 1: 初始化 git 與 pnpm 專案**
 
-Run（在 `/Users/a26013/Documents/Project/poc/svg-font-icon`）:
+Run（在 `/Users/a26013/Documents/Project/poc/pure-css-icon`）:
 ```bash
 git init
 pnpm init

@@ -28,11 +28,11 @@ CSS class 變體——`.i-{name}`（`background-image`，保留原色）與 `.i-
 
 ## 3. 架構總覽
 
-單一 Slidev 專案，位於 `/Users/a26013/Documents/Project/poc/svg-font-icon`。
+單一 Slidev 專案，位於 `/Users/a26013/Documents/Project/poc/pure-css-icon`。
 Tailwind v4 透過 `@tailwindcss/vite` 整合進 Slidev 的 Vite pipeline。
 
 ```
-svg-font-icon/
+pure-css-icon/
 ├── slides.md                    # Slidev 主檔（演進史 → plugin）
 ├── package.json                 # slidev + tailwindcss v4 + @tailwindcss/vite
 ├── vite.config.ts               # 掛 @tailwindcss/vite plugin

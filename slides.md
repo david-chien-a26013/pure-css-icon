@@ -573,15 +573,15 @@ SVG 會保持比例置中（不變形），但非正方形的 icon 會**留白�
 
 <div class="mt-3 flex gap-3 justify-center">
   <div class="flex flex-col items-center gap-1">
-    <div style="width:56px;height:56px;border:1px dashed #f43f5e;background:url('/demo-tall.svg') 100% 100%" />
+    <div style="width:56px;height:56px;border:1px dashed #f43f5e;background:url('/demo-tall.svg') 100% 100%;background-repeat:no-repeat;background-position:center;" />
     <span class="text-xs opacity-50">直的</span>
   </div>
   <div class="flex flex-col items-center gap-1">
-    <div style="width:56px;height:56px;border:1px dashed #f43f5e;background:url('/demo-wide.svg') 100% 100%" />
+    <div style="width:56px;height:56px;border:1px dashed #f43f5e;background:url('/demo-wide.svg') 100% 100%;background-repeat:no-repeat;background-position:center;" />
     <span class="text-xs opacity-50">橫的</span>
   </div>
   <div class="flex flex-col items-center gap-1">
-    <div style="width:56px;height:56px;border:1px dashed #cbd5e1;background:url('/demo-square.svg') 100% 100%" />
+    <div style="width:56px;height:56px;border:1px dashed #cbd5e1;background:url('/demo-square.svg') 100% 100%;background-repeat:no-repeat;background-position:center;" />
     <span class="text-xs opacity-50">正方</span>
   </div>
 </div>
