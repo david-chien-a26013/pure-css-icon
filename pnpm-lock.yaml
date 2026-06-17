@@ -9,7 +9,7 @@ importers:
   .:
     devDependencies:
       '@slidev/cli':
-        specifier: ^52.15.2
+        specifier: 52.15.2
         version: 52.15.2(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@22.19.21)(@vue/compiler-sfc@3.5.38)(markdown-it@14.2.0)(postcss@8.5.15)
       '@slidev/theme-default':
         specifier: ^0.25.0
