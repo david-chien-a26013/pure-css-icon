@@ -442,7 +442,7 @@ export default plugin(function ({ addComponents }) {
 
 # 兩個工具函式
 
-```js {all|1-6|8-15}
+```js {all|1-8|10-17}
 // 檔名 → CSS class 名
 function filenameToClassName (filename) {
   return filename
@@ -571,4 +571,40 @@ Thank you! 　Q & A
 <div class="pt-6 flex gap-4 justify-center text-5xl opacity-80">
   <i class="i-button-success-mask text-emerald-500" />
   <i class="i-icon-locale-normal" />
+</div>
+
+---
+layout: center
+---
+
+# 參考資料
+
+<div class="mt-6 space-y-4 text-left max-w-2xl mx-auto">
+
+<div class="p-4 border rounded-lg">
+  <div class="text-sm opacity-50 mb-1">Anthony Fu</div>
+  <div class="font-semibold">Icons in Pure CSS</div>
+  <a href="https://antfu.me/posts/icons-in-pure-css-zh" class="text-blue-500 text-sm break-all">
+    antfu.me/posts/icons-in-pure-css-zh
+  </a>
+  <div class="text-xs opacity-60 mt-1">本技術的靈感來源，詳述 CSS mask-image icon 原理</div>
+</div>
+
+<div class="p-4 border rounded-lg">
+  <div class="text-sm opacity-50 mb-1">David Chien</div>
+  <div class="font-semibold">在 Vite 專案使用純 CSS icon</div>
+  <a href="https://clipwww.github.io/blog/2023/01/12/icon/" class="text-blue-500 text-sm break-all">
+    clipwww.github.io/blog/2023/01/12/icon/
+  </a>
+  <div class="text-xs opacity-60 mt-1">WindiCSS plugin 實作紀錄，本次簡報的前身</div>
+</div>
+
+<div class="p-4 border rounded-lg">
+  <div class="text-sm opacity-50 mb-1">本場 Demo</div>
+  <div class="font-semibold">tailwind-plugin-bac-icons.js</div>
+  <div class="text-xs opacity-60 mt-1">
+    <code>assets/icons/</code> 下的所有 SVG 自動產生 <code>.i-{name}</code> / <code>.i-{name}-mask</code>
+  </div>
+</div>
+
 </div>
