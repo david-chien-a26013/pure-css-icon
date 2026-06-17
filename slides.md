@@ -689,12 +689,6 @@ layout: center
 <div class="mt-4 grid grid-cols-2 gap-3 text-left text-sm max-w-3xl mx-auto">
 
   <div class="p-3 border rounded-lg">
-    <div class="font-semibold">在 Vite 專案使用純 CSS icon</div>
-    <a href="https://clipwww.github.io/blog/2023/01/12/icon/" class="text-blue-500 text-xs break-all">clipwww.github.io/blog/2023/01/12/icon/</a>
-    <div class="text-xs opacity-60 mt-1">作者部落格 · WindiCSS plugin 前身</div>
-  </div>
-
-  <div class="p-3 border rounded-lg">
     <div class="font-semibold">Icon Fonts 完整教學</div>
     <a href="https://www.cythilya.tw/2013/10/08/icon-fonts-tutorial/" class="text-blue-500 text-xs break-all">cythilya.tw/2013/10/08/icon-fonts-tutorial/</a>
     <div class="text-xs opacity-60 mt-1">Icon Font 做法的背景知識</div>
