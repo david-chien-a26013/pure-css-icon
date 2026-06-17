@@ -2,7 +2,7 @@
 theme: default
 title: Pure CSS SVG Icon
 info: |
-  用 TailwindCSS Plugin 把 SVG icon 變成 CSS class icon
+  用 TailwindCSS Plugin 把 SVG icon 變成 CSS Icon
 highlighter: shiki
 lineNumbers: true
 transition: slide-left
@@ -17,7 +17,7 @@ class: text-center
 
 # Pure CSS SVG Icon
 
-### 用一個 TailwindCSS Plugin，把 SVG 變成 `class`
+### 用一個 TailwindCSS Plugin，把 SVG 變成 CSS Icon
 
 <div class="pt-8 flex gap-6 justify-center items-center text-7xl">
   <i class="i-icon-add" />
@@ -317,12 +317,12 @@ class: text-center
     </div>
     <span class="text-3xl opacity-25">+</span>
     <div class="flex flex-col items-center gap-1">
-      <div class="rounded" style="width:72px;height:72px;background:url('/demo-photo.jpg') center/cover" />
+      <div class="rounded" style="width:72px;height:72px;background:url('./demo-photo.jpg') center/cover" />
       <span class="text-xs opacity-40">photo</span>
     </div>
     <span class="text-3xl opacity-25">=</span>
     <div class="flex flex-col items-center gap-1">
-      <i class="i-button-pile-edit-mask" style="font-size:72px;background:url('/demo-photo.jpg') center/cover" />
+      <i class="i-button-pile-edit-mask" style="font-size:72px;background:url('./demo-photo.jpg') center/cover" />
       <span class="text-xs opacity-40">結果</span>
     </div>
   </div>
